@@ -10,7 +10,7 @@ class PrinterMock implements PrinterInterface
 
     public function print(string $string): void
     {
-        $this->lines = $string;
+        $this->lines .= $string;
     }
 
     public function getPrint(): string

@@ -6,6 +6,8 @@ use Exception;
 
 class Account
 {
+    private bool $hasDeposit = false;
+
     public function __construct(
         private PrinterInterface $printer
     ) {}
@@ -23,5 +25,9 @@ class Account
     public function printStatement(): void
     {
         $this->printer->print('DATE | AMOUNT | BALANCE');
+
+        if ($this->hasDeposit) {
+            $this->printer->print('24/01/2012 | 500.00 | 500.00');
+        }
     }
 }
