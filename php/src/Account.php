@@ -2,25 +2,26 @@
 
 namespace Kata;
 
+use Exception;
+
 class Account
 {
-    public function __construct($printer)
-    {
-
-    }
+    public function __construct(
+        private PrinterInterface $printer
+    ) {}
 
     public function deposit(int $amount): void
     {
-        throw new \Exception();
+        throw new Exception('deposit Unimplemented');
     }
 
     public function withdraw(int $amount): void
     {
-        throw new \Exception();
+        throw new Exception('withdraw Unimplemented');
     }
 
     public function printStatement(): void
     {
-        throw new \Exception();
+        $this->printer->print('DATE | AMOUNT | BALANCE');
     }
 }

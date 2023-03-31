@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 class AccountActionsTest extends TestCase
 {
     /** @test */
-    public function print_statement(): void
+    public function print_statement_from_empty_state(): void
     {
         $mockPrinter = new PrinterMock();
         $sut = new Account($mockPrinter);
