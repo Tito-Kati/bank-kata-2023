@@ -14,7 +14,7 @@ class Account
 
     public function deposit(int $amount): void
     {
-        throw new Exception('deposit Unimplemented');
+        $this->hasDeposit = true;
     }
 
     public function withdraw(int $amount): void
