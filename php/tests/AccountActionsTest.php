@@ -21,4 +21,19 @@ EOT;
 
         $this->assertEquals($expectedResult, $mockPrinter->getPrint());
     }
+
+    /** @test */
+    public function deposit_from_empty_account(): void
+    {
+        $mockPrinter = new PrinterMock();
+        $sut = new Account($mockPrinter);
+        $sut->deposit(500);
+
+        $expectedResult = <<< EOT
+DATE | AMOUNT | BALANCE
+24/01/2012 | 500.00 | 500.00
+EOT;
+
+        $this->assertEquals($expectedResult, $mockPrinter->getPrint());
+    }
 }
